@@ -25,27 +25,28 @@ body{
     border-radius: 24px;
 }
 
+@media screen and (min-width: 1201px) {
 
-@media (min-width: 769px){
+    main{
+        position: relative;
+    }
 
     header{
         align-items: center;
         display: flex;
-        height: 96px;
-        width: 100%;
+        height: 6rem;
+        width: 50%;
     }
 
     header .logo{
-        margin-left: 10px;
+        margin-left: .5rem;
     }
 
     .encrypt-form{
         display: inline-block;
-        margin: 50px 40px 0 120px;
-        padding-left: 120px;
-        width: 50%;
-        position: relative;
-        height: 80vh;
+        margin: 2rem 0;
+        padding: 2rem 5rem;
+        width: 70%;
     }
 
     .encrypt-input{
@@ -53,7 +54,7 @@ body{
         border: none;
         color: #0A3871;
         display: inline-block;
-        font-size: 32px;
+        font-size: 2rem;
         resize: none;
         width: 100%;
     }
@@ -64,32 +65,27 @@ body{
 
     .encrypt-input::placeholder{
         color: #0A3871;
-        font-size: 32px;
+        font-size: 2rem;
     }
-    
 
     .encrypt-comments{
         display: flex;
-        margin-bottom: 16px;
-        position: absolute;
-        bottom: 83px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
     }
 
     .encrypt-comments img{
-        margin-right: 8px;
+        width: 1rem;
     }
 
     .encrypt-comments p{
-        color: #495057
+        color: #495057;
+        padding: 0.5rem;
     }
 
     .encrypt-buttons{
-        bottom: 10px;
         display: flex;
-        justify-content: space-evenly;
-        padding-left: 120px;
-        position: absolute;
-        right: 0;
+        justify-content: space-between;
         width: 100%;
     }
 
@@ -97,11 +93,10 @@ body{
         border: none;
         color: #FFF;
         display: inline-block;
-        font-size: 16px;
+        font-size: 1.5rem;
         font-weight: 400;
-        height: 67px;
-        margin-right: 12px;
-        width: 47%;
+        height: 4rem;
+        width: 45%;
     }
     
     .decrypt-btn{
@@ -109,55 +104,266 @@ body{
         border: 1px solid #0A3871;
         color: #0A3871;
         display: inline-block;
-        font-size: 16px;
+        font-size: 1.5rem;
         font-weight: 400;
-        height: 67px;
-        margin-left: 12px;
-        width: 47%;        
+        height: 4rem;
+        margin-left: .8rem;
+        width: 45%;        
     }
 
     .encrypt-result{
+        border-radius: 2rem;
         background-color: #FFF;
-        border-radius: 32px;
-        box-shadow: 0px 24px 32px -8px #00000014;
         display: inline-block;
-        font-weight: 700;
-        height: 95vh;
-        margin: 0 40px 40px 40px;
-        text-align: center;
-        width: 30%;
+        margin: 0 .5rem;
+        height: 50vh;
+        padding: 2rem;
+        position: absolute;
+        top: 1rem;
+        width: 25%;
     }
 
     .encrypt-text{
-        margin-bottom: 243px;
+        font-size: .8rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .encrypt-result-img{
+        margin: 14rem auto 2rem auto;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+
+    main{
+        position: relative;
+    }
+
+    header{
+        align-items: center;
+        display: flex;
+        height: 6rem;
+        width: 50%;
+    }
+
+    header .logo{
+        margin-left: .5rem;
+    }
+
+    .encrypt-form{
+        display: inline-block;
+        margin: 2rem 0;
+        padding: 2rem 5rem;
+        width: 70%;
+    }
+
+    .encrypt-input{
+        background-color: #F3F5FC;
+        border: none;
+        color: #0A3871;
+        display: inline-block;
+        font-size: 2rem;
+        resize: none;
+        width: 100%;
+    }
+
+    .encrypt-input:focus{
+        outline: none;
+    }
+
+    .encrypt-input::placeholder{
+        color: #0A3871;
+        font-size: 2rem;
+    }
+
+    .encrypt-comments{
+        display: flex;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .encrypt-comments img{
+        width: 1rem;
+    }
+
+    .encrypt-comments p{
+        color: #495057;
+        padding: 0.5rem;
+    }
+
+    .encrypt-buttons{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .encrypt-btn{
+        border: none;
+        color: #FFF;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 400;
+        height: 4rem;
+        width: 45%;
+    }
+    
+    .decrypt-btn{
+        background-color: #FFF;
+        border: 1px solid #0A3871;
+        color: #0A3871;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 400;
+        height: 4rem;
+        margin-left: .8rem;
+        width: 45%;        
+    }
+
+    .encrypt-result{
+        border-radius: 2rem;
+        background-color: #FFF;
+        display: inline-block;
+        margin: 0 .5rem;
+        height: 50vh;
+        padding: 2rem;
+        position: absolute;
+        top: 1rem;
+        width: 25%;
+    }
+
+    .encrypt-text{
+        font-size: .8rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .encrypt-result-img{
+        margin: 14rem auto 2rem auto;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+
+    header{
+        align-items: center;
+        display: flex;
+        height: 6rem;
+        width: 100%;
+    }
+
+    header .logo{
+        margin-left: .5rem;
+    }
+
+    .encrypt-form{
+        display: inline-block;
+        height: 70vh;
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+
+    .encrypt-input{
+        background-color: #F3F5FC;
+        border: none;
+        color: #0A3871;
+        display: inline-block;
+        font-size: 3rem;
+        resize: none;
+        width: 100%;
+    }
+
+    .encrypt-input:focus{
+        outline: none;
+    }
+
+    .encrypt-input::placeholder{
+        color: #0A3871;
+        font-size: 3rem;
+    }
+
+    .encrypt-comments{
+        display: flex;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .encrypt-comments img{
+        width: 2rem;
+    }
+
+    .encrypt-comments p{
+        color: #495057;
+        padding: 0.5rem;
+    }
+
+    .encrypt-buttons{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .encrypt-btn{
+        border: none;
+        color: #FFF;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 400;
+        height: 5rem;
+        width: 45%;
+    }
+    
+    .decrypt-btn{
+        background-color: #FFF;
+        border: 1px solid #0A3871;
+        color: #0A3871;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 400;
+        height: 5rem;
+        margin-left: .8rem;
+        width: 45%;        
+    }
+
+    .encrypt-result{ 
+        background-color: #FFF;
+        border-radius: 2rem;
+        box-shadow: 0 1.5rem 2rem -.5rem #00000014;
+        display: block;
+        font-weight: 700;
+        margin: 4rem auto;
+        padding: 1.5rem;
+        text-align: center;
+        width: 95%;
     }
 
     .encrypt-result-title{
         color: #343A40;
-        font-size: 24px;
+        font-size: 2rem;
         margin: 0 auto;
         width: 70%;
     }
 
     .encrypt-result-paragraph{
         color: #495057;
-        font-size: 16px;
+        font-size: 1.5rem;
         font-weight: 400;
-        margin: 16px auto;
+        margin: 1rem auto;
         width: 80%;
     }
 
     .encrypt-result-img{
-        margin-bottom: 32px;
-        margin-top: 283px;
-        width: 80%;
+        display: none;
     }
 
 
 }
 
-
-@media (max-width: 768px){
+@media screen and (max-width: 768px) and (min-width: 481px){
 
     header{
         align-items: center;
@@ -268,7 +474,7 @@ body{
 
 }
 
-@media (max-width: 375px){
+@media screen and (max-width: 480px) and (min-width: 320px){
     
     header{
         align-items: center;
@@ -358,7 +564,7 @@ body{
         color: #343A40;
         font-size: 24px;
         margin: 0 auto;
-        width: 263px;
+        width: 95%;
     }
 
     .encrypt-result-paragraph{
