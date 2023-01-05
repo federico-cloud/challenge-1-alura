@@ -7,23 +7,66 @@
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-html{
-    font-size: 16px;
-}
-
 body{
     background-color: #F3F5FC;
 }
 
 .encrypt-btn{
     background: #0A3871;
-    border-radius: 24px;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.encrypt-btn:hover{
+    background: #0468e3;
 }
 
 .decrypt-btn{
     border: 1px solid #0A3871;
-    border-radius: 24px;
+    border-radius: 2rem;
+    cursor: pointer;
 }
+
+.decrypt-btn:hover{
+    background-color: #FFF;
+    border: 1px solid #0468e3;
+    color: #0468e3;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+.disabled{
+    background: #343A40;
+    cursor: not-allowed;
+}
+
+.disabled:hover{
+    background: #343A40;
+}
+
+.copy-btn{
+    background-color: #FFF;
+    border: 1px solid #0A3871;
+    border-radius: 2rem;
+    color: #0A3871;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 5rem;
+    margin-top: 6rem;
+    width: 100%;
+}
+
+.encrypt-result-text{
+    word-break: break-all;
+}
+
 
 @media screen and (min-width: 1201px) {
 
@@ -35,16 +78,16 @@ body{
         align-items: center;
         display: flex;
         height: 6rem;
-        width: 50%;
     }
 
     header .logo{
-        margin-left: .5rem;
+        margin-left: 1rem;
     }
 
     .encrypt-form{
         display: inline-block;
         margin: 2rem 0;
+        height: 50vh;
         padding: 2rem 5rem;
         width: 70%;
     }
@@ -55,6 +98,7 @@ body{
         color: #0A3871;
         display: inline-block;
         font-size: 2rem;
+        height: 50vh;
         resize: none;
         width: 100%;
     }
@@ -69,18 +113,29 @@ body{
     }
 
     .encrypt-comments{
+        align-items: center;
         display: flex;
         font-size: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
-    .encrypt-comments img{
-        width: 1rem;
+    .encrypt-comments span{
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #495057;
+        border-radius: 50%;
+        color: #FFF;
+        font-size: 1.5rem;
     }
 
-    .encrypt-comments p{
+    .encrypt-comments-paragraph{
         color: #495057;
-        padding: 0.5rem;
+        font-size: 1.5rem;
+        margin-left: .5rem;
     }
 
     .encrypt-buttons{
@@ -95,7 +150,7 @@ body{
         display: inline-block;
         font-size: 1.5rem;
         font-weight: 400;
-        height: 4rem;
+        height: 5rem;
         width: 45%;
     }
     
@@ -106,7 +161,7 @@ body{
         display: inline-block;
         font-size: 1.5rem;
         font-weight: 400;
-        height: 4rem;
+        height: 5rem;
         margin-left: .8rem;
         width: 45%;        
     }
@@ -116,10 +171,10 @@ body{
         background-color: #FFF;
         display: inline-block;
         margin: 0 .5rem;
-        height: 50vh;
+        min-height: 80vh;
         padding: 2rem;
         position: absolute;
-        top: 1rem;
+        top: 6rem;
         width: 25%;
     }
 
@@ -130,13 +185,17 @@ body{
     }
     
     .encrypt-result-img{
-        margin: 14rem auto 2rem auto;
+        margin: 6rem auto 2rem auto;
         width: 100%;
+    }
+
+    .encrypt-result-text{
+        font-size: 2rem;
     }
 
 }
 
-@media screen and (max-width: 1200px) and (min-width: 1025px) {
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
 
     main{
         position: relative;
@@ -156,6 +215,7 @@ body{
     .encrypt-form{
         display: inline-block;
         margin: 2rem 0;
+        height: 50vh;
         padding: 2rem 5rem;
         width: 70%;
     }
@@ -166,6 +226,7 @@ body{
         color: #0A3871;
         display: inline-block;
         font-size: 2rem;
+        height: 50vh;
         resize: none;
         width: 100%;
     }
@@ -185,13 +246,22 @@ body{
         margin-bottom: 1rem;
     }
 
-    .encrypt-comments img{
-        width: 1rem;
+    .encrypt-comments span{
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #495057;
+        border-radius: 50%;
+        color: #FFF;
+        font-size: 1.5rem;
     }
 
-    .encrypt-comments p{
+    .encrypt-comments-paragraph{
         color: #495057;
-        padding: 0.5rem;
+        font-size: 1.5rem;
+        margin-left: .5rem;
     }
 
     .encrypt-buttons{
@@ -206,7 +276,7 @@ body{
         display: inline-block;
         font-size: 1.5rem;
         font-weight: 400;
-        height: 4rem;
+        height: 5rem;
         width: 45%;
     }
     
@@ -217,7 +287,7 @@ body{
         display: inline-block;
         font-size: 1.5rem;
         font-weight: 400;
-        height: 4rem;
+        height: 5rem;
         margin-left: .8rem;
         width: 45%;        
     }
@@ -227,10 +297,10 @@ body{
         background-color: #FFF;
         display: inline-block;
         margin: 0 .5rem;
-        height: 50vh;
+        min-height: 70vh;
         padding: 2rem;
         position: absolute;
-        top: 1rem;
+        top: 6rem;
         width: 25%;
     }
 
@@ -241,8 +311,12 @@ body{
     }
     
     .encrypt-result-img{
-        margin: 14rem auto 2rem auto;
+        margin: 6rem auto 2rem auto;
         width: 100%;
+    }
+
+    .encrypt-result-text{
+        font-size: 2rem;
     }
 
 }
@@ -262,7 +336,6 @@ body{
 
     .encrypt-form{
         display: inline-block;
-        height: 70vh;
         padding: 1rem 2rem;
         width: 100%;
     }
@@ -272,7 +345,8 @@ body{
         border: none;
         color: #0A3871;
         display: inline-block;
-        font-size: 3rem;
+        font-size: 2rem;
+        height: 30vh;
         resize: none;
         width: 100%;
     }
@@ -283,22 +357,31 @@ body{
 
     .encrypt-input::placeholder{
         color: #0A3871;
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .encrypt-comments{
         display: flex;
-        font-size: 2rem;
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 
-    .encrypt-comments img{
+    .encrypt-comments span{
+        align-items: center;
+        background-color: #495057;
+        border-radius: 50%;
+        color: #FFF;
+        display: flex;
+        font-size: 1.5rem;
+        height: 2rem;
+        justify-content: center;
         width: 2rem;
     }
 
-    .encrypt-comments p{
+    .encrypt-comments-paragraph{
         color: #495057;
-        padding: 0.5rem;
+        font-size: 1.5rem;
+        margin-left: .5rem;
     }
 
     .encrypt-buttons{
@@ -360,20 +443,30 @@ body{
         display: none;
     }
 
+    .encrypt-result-text{
+        font-size: 2rem;
+    }
+
+    .copy-btn{
+        font-size: 1.5rem;
+        height: 5rem;
+        width: 50%;
+    }
 
 }
 
-@media screen and (max-width: 768px) and (min-width: 481px){
+@media screen and (max-width: 769px) and (min-width: 480px){
 
     header{
         align-items: center;
         display: flex;
-        height: 4rem;
+        height: 3rem;
         width: 100%;
     }
 
     header .logo{
-        margin-left: .6rem;
+        height: 2rem;
+        width: 2rem;
     }
 
     .encrypt-form{
@@ -385,8 +478,8 @@ body{
         background-color: #F3F5FC;
         border: none;
         color: #0A3871;
-        font-size: 2rem;
-        height: 50vh;
+        font-size: 1.5rem;
+        height: 25vh;
         margin: 2rem auto 1rem auto;
         resize: none;
         width: 100%;
@@ -398,21 +491,32 @@ body{
 
     .encrypt-input::placeholder{
         color: #0A3871;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
-    
 
     .encrypt-comments{
+        align-items: center;
         display: flex;
         margin-bottom: 1rem;
     }
 
-    .encrypt-comments img{
-        margin-right: .5rem;
+    .encrypt-comments span{
+        align-items: center;
+        background-color: #495057;
+        border-radius: 50%;
+        color: #FFF;
+        display: flex;
+        font-size: 1.5rem;
+        height: 1.5rem;
+        justify-content: center;
+        margin-left: 1rem;
+        width: 1.5rem;
     }
 
-    .encrypt-comments p{
-        color: #495057
+    .encrypt-comments-paragraph{
+        color: #495057;
+        font-size: 1rem;
+        margin-left: .5rem;
     }
 
     .encrypt-buttons{
@@ -472,6 +576,16 @@ body{
         display: none
     }
 
+    .encrypt-result-text{
+        font-size: 1.5rem;
+    }
+
+    .copy-btn{
+        font-size: 1rem;
+        height: 4rem;
+        width: 60%;
+    }
+
 }
 
 @media screen and (max-width: 480px) and (min-width: 320px){
@@ -479,12 +593,14 @@ body{
     header{
         align-items: center;
         display: flex;
-        height: 96px;
+        height: 3rem;
         width: 100%;
     }
 
     header .logo{
-        margin-left: 10px;
+        margin-left: .5rem;
+        height: 2rem;
+        width: 2rem;
     }
 
     .encrypt-form{
@@ -496,9 +612,9 @@ body{
         background-color: #F3F5FC;
         border: none;
         color: #0A3871;
-        font-size: 32px;
-        height: 48px;
-        margin: 56px auto 250px auto;
+        font-size: 1.5rem;
+        height: 30vh;
+        margin: 0 auto 2rem auto;
         width: 100%;
     }
 
@@ -508,32 +624,42 @@ body{
 
     .encrypt-input::placeholder{
         color: #0A3871;
-        font-size: 32px;
-        line-height: 48px;
+        font-size: 2rem;
+        line-height: 3rem;
     }
-    
 
     .encrypt-comments{
         display: flex;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
     }
 
-    .encrypt-comments img{
-        margin-right: 8px;
+    .encrypt-comments span{
+        align-items: center;
+        background-color: #495057;
+        border-radius: 50%;
+        color: #FFF;
+        display: flex;
+        font-size: 1.5rem;
+        height: 1.5rem;
+        justify-content: center;
+        margin-left: 1rem;
+        width: 1.5rem;
     }
 
-    .encrypt-comments p{
-        color: #495057
+    .encrypt-comments-paragraph{
+        color: #495057;
+        font-size: 1rem;
+        margin-left: .5rem;
     }
 
     .encrypt-btn{
         border: none;
         color: #FFF;
         display: inline-block;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 400;
-        height: 67px;
-        margin-bottom: 24px;
+        height: 4rem;
+        margin-bottom: 1.5rem;
         width: 100%;
     }
     
@@ -542,39 +668,49 @@ body{
         border: 1px solid #0A3871;
         color: #0A3871;
         display: inline-block;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 400;
-        height: 67px;
-        margin-bottom: 64px;
+        height: 4rem;
+        margin-bottom: 2rem;
         width: 100%;        
     }
 
     .encrypt-result{
         background-color: #FFF;
-        border-radius: 32px;
-        box-shadow: 0px 24px 32px -8px #00000014;
+        border-radius: 2rem;
+        box-shadow: 0 1.5rem 2rem -.5rem #00000014;
         font-weight: 700;
-        margin: 0 auto 40px auto;
-        padding: 32px;
+        margin: 0 auto 2rem auto;
+        padding: 1rem;
         text-align: center;
         width: 85%;
     }
 
     .encrypt-result-title{
         color: #343A40;
-        font-size: 24px;
+        font-size: 1.5rem;
         margin: 0 auto;
         width: 95%;
     }
 
     .encrypt-result-paragraph{
         color: #495057;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 400;
-        margin: 16px auto;
+        margin: 1rem auto;
     }
+
+    .encrypt-result-text{
+        font-size: 1.5rem;
+    }
+
     .encrypt-result-img{
         display: none
+    }
+
+    .copy-btn{
+        font-size: 1rem;
+        height: 4rem;
     }
     
 }
