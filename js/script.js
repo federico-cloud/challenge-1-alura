@@ -85,7 +85,20 @@ let showMessage = () => {
         result.innerHTML = 'El texto ingresado no es valido.';
     }
 }
- 
+
+let copyMessage = () => {
+    navigator.clipboard.writeText(result.innerHTML);
+    copy.innerHTML = 'Texto copiado !!!';
+    copy.classList.add('textCopied');
+
+    setTimeout(() => {
+        copy.classList.remove('textCopied');
+        copy.innerHTML = 'Copiar';
+    }, 3000)
+
+}
 
 text.addEventListener('input', getText);
 encrypt.addEventListener('click', showMessage);
+copy.addEventListener('click', copyMessage);
+
