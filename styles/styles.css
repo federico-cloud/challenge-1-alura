@@ -8,29 +8,57 @@
 }
 
 body{
-    background-color: #F3F5FC;
+    background-color: #e9e9ea;
+}
+
+.encrypt-input{
+    background-color: #e9e9ea;
+    border: none;
+    color: #0A3871;
+    display: inline-block;
+    font-size: 2rem;
+    height: 50vh;
+    resize: none;
+    width: 100%;
 }
 
 .encrypt-btn{
     background: #0A3871;
+    border: none;
     border-radius: 2rem;
+    color: #FFF;
     cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 5rem;
+    margin: 1rem .5rem;
+    transition: all .25s ease-in-out;
+    width: 50%;
 }
 
 .encrypt-btn:hover{
     background: #0468e3;
+    font-weight: 700;
 }
 
 .decrypt-btn{
-    border: 1px solid #0A3871;
+    background-color: #FFF;
+    border: none;
     border-radius: 2rem;
+    color: #0A3871;
     cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 5rem;
+    margin: 1rem .5rem;
+    transition: color .25s ease-in-out;
+    width: 50%;
 }
 
 .decrypt-btn:hover{
     background-color: #FFF;
-    border: 1px solid #0468e3;
     color: #0468e3;
+    font-weight: 700;
 }
 
 .invisible{
@@ -39,15 +67,6 @@ body{
 
 .visible{
     display: block;
-}
-
-.disabled{
-    background: #343A40;
-    cursor: not-allowed;
-}
-
-.disabled:hover{
-    background: #343A40;
 }
 
 .copy-btn{
@@ -60,13 +79,55 @@ body{
     font-weight: 400;
     height: 5rem;
     margin-top: 6rem;
+    transition: all .25s ease-in-out;
     width: 100%;
 }
 
-.encrypt-result-text{
-    word-break: break-all;
+.copy-btn:hover{
+    background-color: #0468e3;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
 }
 
+.encrypt-result-text{
+    word-break: break-word;
+}
+
+.encrypt-comments-icon{
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #495057;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 1.5rem;
+}
+
+.encrypt-comments-paragraph{
+    color: #495057;
+    font-size: 1.5rem;
+    margin-left: .5rem;
+}
+
+.danger{
+    background-color: #ff0000;
+    transition: all 1s ease-in-out;
+}
+
+.dangerText{
+    color: #ff0000;
+    transition: all 1s ease-in-out;
+}
+
+.textCopied{
+    background-color: #18b713;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+}
 
 @media screen and (min-width: 1201px) {
 
@@ -93,7 +154,7 @@ body{
     }
 
     .encrypt-input{
-        background-color: #F3F5FC;
+        background-color: #e9e9ea;
         border: none;
         color: #0A3871;
         display: inline-block;
@@ -115,55 +176,14 @@ body{
     .encrypt-comments{
         align-items: center;
         display: flex;
-        font-size: 1rem;
         margin-bottom: 2rem;
         margin-top: 2rem;
-    }
-
-    .encrypt-comments span{
-        height: 2rem;
-        width: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #495057;
-        border-radius: 50%;
-        color: #FFF;
-        font-size: 1.5rem;
-    }
-
-    .encrypt-comments-paragraph{
-        color: #495057;
-        font-size: 1.5rem;
-        margin-left: .5rem;
     }
 
     .encrypt-buttons{
         display: flex;
         justify-content: space-between;
         width: 100%;
-    }
-
-    .encrypt-btn{
-        border: none;
-        color: #FFF;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 400;
-        height: 5rem;
-        width: 45%;
-    }
-    
-    .decrypt-btn{
-        background-color: #FFF;
-        border: 1px solid #0A3871;
-        color: #0A3871;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 400;
-        height: 5rem;
-        margin-left: .8rem;
-        width: 45%;        
     }
 
     .encrypt-result{
@@ -190,8 +210,9 @@ body{
     }
 
     .encrypt-result-text{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
+    
 
 }
 
@@ -220,17 +241,6 @@ body{
         width: 70%;
     }
 
-    .encrypt-input{
-        background-color: #F3F5FC;
-        border: none;
-        color: #0A3871;
-        display: inline-block;
-        font-size: 2rem;
-        height: 50vh;
-        resize: none;
-        width: 100%;
-    }
-
     .encrypt-input:focus{
         outline: none;
     }
@@ -246,50 +256,10 @@ body{
         margin-bottom: 1rem;
     }
 
-    .encrypt-comments span{
-        height: 2rem;
-        width: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #495057;
-        border-radius: 50%;
-        color: #FFF;
-        font-size: 1.5rem;
-    }
-
-    .encrypt-comments-paragraph{
-        color: #495057;
-        font-size: 1.5rem;
-        margin-left: .5rem;
-    }
-
     .encrypt-buttons{
         display: flex;
         justify-content: space-between;
         width: 100%;
-    }
-
-    .encrypt-btn{
-        border: none;
-        color: #FFF;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 400;
-        height: 5rem;
-        width: 45%;
-    }
-    
-    .decrypt-btn{
-        background-color: #FFF;
-        border: 1px solid #0A3871;
-        color: #0A3871;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 400;
-        height: 5rem;
-        margin-left: .8rem;
-        width: 45%;        
     }
 
     .encrypt-result{
@@ -341,14 +311,7 @@ body{
     }
 
     .encrypt-input{
-        background-color: #F3F5FC;
-        border: none;
-        color: #0A3871;
-        display: inline-block;
-        font-size: 2rem;
         height: 30vh;
-        resize: none;
-        width: 100%;
     }
 
     .encrypt-input:focus{
@@ -366,50 +329,10 @@ body{
         margin-top: 1rem;
     }
 
-    .encrypt-comments span{
-        align-items: center;
-        background-color: #495057;
-        border-radius: 50%;
-        color: #FFF;
-        display: flex;
-        font-size: 1.5rem;
-        height: 2rem;
-        justify-content: center;
-        width: 2rem;
-    }
-
-    .encrypt-comments-paragraph{
-        color: #495057;
-        font-size: 1.5rem;
-        margin-left: .5rem;
-    }
-
     .encrypt-buttons{
         display: flex;
         justify-content: space-between;
         width: 100%;
-    }
-
-    .encrypt-btn{
-        border: none;
-        color: #FFF;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 400;
-        height: 5rem;
-        width: 45%;
-    }
-    
-    .decrypt-btn{
-        background-color: #FFF;
-        border: 1px solid #0A3871;
-        color: #0A3871;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 400;
-        height: 5rem;
-        margin-left: .8rem;
-        width: 45%;        
     }
 
     .encrypt-result{ 
@@ -450,6 +373,7 @@ body{
     .copy-btn{
         font-size: 1.5rem;
         height: 5rem;
+        margin: 1.5rem auto;
         width: 50%;
     }
 
@@ -475,14 +399,9 @@ body{
     }
 
     .encrypt-input{        
-        background-color: #F3F5FC;
-        border: none;
-        color: #0A3871;
         font-size: 1.5rem;
         height: 25vh;
         margin: 2rem auto 1rem auto;
-        resize: none;
-        width: 100%;
     }
 
     .encrypt-input:focus{
@@ -494,58 +413,34 @@ body{
         font-size: 1.5rem;
     }
 
+    .encrypt-btn{
+        font-size: 1rem;
+    }
+
+    .decrypt-btn{
+        font-size: 1rem;
+    }
+
     .encrypt-comments{
         align-items: center;
         display: flex;
         margin-bottom: 1rem;
     }
 
-    .encrypt-comments span{
-        align-items: center;
-        background-color: #495057;
-        border-radius: 50%;
-        color: #FFF;
-        display: flex;
-        font-size: 1.5rem;
+    .encrypt-comments-icon{
+        font-size: 1rem;
         height: 1.5rem;
-        justify-content: center;
-        margin-left: 1rem;
         width: 1.5rem;
     }
 
     .encrypt-comments-paragraph{
-        color: #495057;
         font-size: 1rem;
-        margin-left: .5rem;
     }
 
     .encrypt-buttons{
         display: flex;
         justify-content: space-around;
         margin-bottom: 2rem;
-    }
-
-    .encrypt-btn{
-        border: none;
-        color: #FFF;
-        display: inline-block;
-        font-size: 1rem;
-        font-weight: 400;
-        height: 4rem;
-        margin: .5rem auto;
-        width: 45%;
-    }
-    
-    .decrypt-btn{
-        background-color: #FFF;
-        border: 1px solid #0A3871;
-        color: #0A3871;
-        display: inline-block;
-        font-size: 1rem;
-        font-weight: 400;
-        height: 4rem;
-        margin: .5rem auto;
-        width: 45%;        
     }
 
     .encrypt-result{
@@ -583,6 +478,7 @@ body{
     .copy-btn{
         font-size: 1rem;
         height: 4rem;
+        margin: 1rem auto;
         width: 60%;
     }
 
@@ -609,13 +505,9 @@ body{
     }
 
     .encrypt-input{        
-        background-color: #F3F5FC;
-        border: none;
-        color: #0A3871;
         font-size: 1.5rem;
         height: 30vh;
         margin: 0 auto 2rem auto;
-        width: 100%;
     }
 
     .encrypt-input:focus{
@@ -629,47 +521,30 @@ body{
     }
 
     .encrypt-comments{
+        align-items: center;
         display: flex;
         margin-bottom: 1rem;
     }
 
-    .encrypt-comments span{
-        align-items: center;
-        background-color: #495057;
-        border-radius: 50%;
-        color: #FFF;
-        display: flex;
-        font-size: 1.5rem;
+    .encrypt-comments-icon{
+        font-size: 1rem;
         height: 1.5rem;
-        justify-content: center;
-        margin-left: 1rem;
         width: 1.5rem;
     }
 
     .encrypt-comments-paragraph{
-        color: #495057;
         font-size: 1rem;
-        margin-left: .5rem;
     }
 
     .encrypt-btn{
-        border: none;
-        color: #FFF;
-        display: inline-block;
         font-size: 1rem;
-        font-weight: 400;
         height: 4rem;
         margin-bottom: 1.5rem;
         width: 100%;
     }
     
     .decrypt-btn{
-        background-color: #FFF;
-        border: 1px solid #0A3871;
-        color: #0A3871;
-        display: inline-block;
         font-size: 1rem;
-        font-weight: 400;
         height: 4rem;
         margin-bottom: 2rem;
         width: 100%;        
