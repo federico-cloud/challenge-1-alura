@@ -1,3 +1,5 @@
+'use strict';
+
 let encrypt         = document.querySelector('.encrypt-btn');
 let decrypt         = document.querySelector('.decrypt-btn');
 let text            = document.querySelector('.encrypt-input');
@@ -20,34 +22,31 @@ const encryptCode = {
 }
 
 function isValid(text) {
-
     if (regExp.test(text)) {
         return false;
     } else {
         return true;
-    }
-    
+    } 
 }
 
 let getText = () => {
-    
-    let encryptText = text.value;
 
-    if (isValid(encryptText)) {
+    let textInput = text.value;
+
+    if (isValid(textInput)) {
         adviceIcon.classList.remove('danger');
         adviceText.classList.remove('dangerText');
     } else {
         adviceIcon.classList.add('danger');
         adviceText.classList.add('dangerText');
     }
-
+    return textInput;
 }
-
 
 let encryptFunction = (text) => {
     
     let newText = '';
-    
+
     for (let i = 0; i < text.length; i++) {
         
         if (text[i] === 'a') {
@@ -62,11 +61,31 @@ let encryptFunction = (text) => {
             newText += encryptCode.u;
         } else {
             newText += text[i];
-        }        
+        }            
     }
-    
+
     return newText;
+
 }
 
+let showMessage = () => {
+    
+    resultTitle.classList.add('invisible');
+    resultParagraph.classList.add('invisible');
+    img.classList.add('invisible');
+    copy.classList.add('visible')
+
+    let message = getText();
+
+    if (message.length === 0) {
+        result.innerHTML = 'Primero debe ingresar un texto valido';
+    } else if (isValid(message)) {
+        result.innerHTML = encryptFunction(message);
+    } else {
+        result.innerHTML = 'El texto ingresado no es valido.';
+    }
+}
+ 
 
 text.addEventListener('input', getText);
+encrypt.addEventListener('click', showMessage);
