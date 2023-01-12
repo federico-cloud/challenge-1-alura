@@ -89,13 +89,14 @@ let showMessage = () => {
 let copyMessage = () => {
     navigator.clipboard.writeText(result.innerHTML);
     copy.innerHTML = 'Texto copiado !!!';
-    copy.classList.add('textCopied');
+    copy.classList.remove('textCopied');
+    copy.classList.add('copy');
 
     setTimeout(() => {
         copy.classList.remove('textCopied');
         copy.innerHTML = 'Copiar';
-    }, 3000)
-
+        copy.classList.remove('copy');
+    }, 1500)
 }
 
 text.addEventListener('input', getText);
