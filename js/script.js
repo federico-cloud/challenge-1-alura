@@ -21,6 +21,14 @@ const encryptCode = {
     'u' : 'ufat'
 }
 
+const decryptCode = {
+    'ai'    : 'a',
+    'enter' : 'e',
+    'imes'  : 'i',
+    'ober'  : 'o',
+    'ufat'  : 'u'
+}
+
 function isValid(text) {
     if (regExp.test(text)) {
         return false;
@@ -45,35 +53,63 @@ let getText = () => {
 
 let encryptFunction = (text) => {
     
-    let newText = '';
+    let encryptedMessage = '';
 
     for (let i = 0; i < text.length; i++) {
         
         if (text[i] === 'a') {
-            newText += encryptCode.a;
+            encryptedMessage += encryptCode.a;
         } else if (text[i] === 'e') {
-            newText += encryptCode.e;
+            encryptedMessage += encryptCode.e;
         } else if (text[i] === 'i') {
-            newText += encryptCode.i;
+            encryptedMessage += encryptCode.i;
         } else if (text[i] === 'o') {
-            newText += encryptCode.o;
+            encryptedMessage += encryptCode.o;
         } else if (text[i] === 'u') {
-            newText += encryptCode.u;
+            encryptedMessage += encryptCode.u;
         } else {
-            newText += text[i];
+            encryptedMessage += text[i];
         }            
     }
 
-    return newText;
+    return encryptedMessage;
 
 }
 
-let showMessage = () => {
+let decryptFunction = (text) => {
+    
+    let encryptedMessage = text.split(' ');
+    let decryptedMessage = '';
+    let word = '';
+
+    for (let i = 0; i < encryptedMessage.length; i++) {
+
+        word = encryptedMessage[i];
+        
+        if (word.includes(encryptCode.a) || word.includes(encryptCode.e) || word.includes(encryptCode.i) || word.includes(encryptCode.o) || word.includes(encryptCode.u)) {
+            word = word.replaceAll('ai', decryptCode.ai);
+            word = word.replaceAll('enter', decryptCode.enter);
+            word = word.replaceAll('imes', decryptCode.imes);
+            word = word.replaceAll('ober', decryptCode.ober);
+            word = word.replaceAll('ufat', decryptCode.ufat);
+            decryptedMessage += word + ' ';
+        } else {
+            decryptedMessage += word + ' ';
+        }
+        
+    }
+
+    return decryptedMessage;
+
+}
+
+
+let showMessageEncrypted = () => {
     
     resultTitle.classList.add('invisible');
     resultParagraph.classList.add('invisible');
     img.classList.add('invisible');
-    copy.classList.add('visible')
+    copy.classList.add('visible');
 
     let message = getText();
 
@@ -82,9 +118,23 @@ let showMessage = () => {
     } else if (isValid(message)) {
         result.innerHTML = encryptFunction(message);
     } else {
-        result.innerHTML = 'El texto ingresado no es valido.';
+        result.innerHTML = 'El texto ingresado no es valido';
     }
 }
+
+let showMessageDecrypted = () => {
+
+    resultTitle.classList.add('invisible');
+    resultParagraph.classList.add('invisible');
+    img.classList.add('invisible');
+    copy.classList.add('visible');
+
+    let message = getText();
+
+    result.innerHTML = decryptFunction(message);
+
+}
+    
 
 let copyMessage = () => {
     navigator.clipboard.writeText(result.innerHTML);
@@ -99,7 +149,11 @@ let copyMessage = () => {
     }, 1500)
 }
 
+
+
+
 text.addEventListener('input', getText);
-encrypt.addEventListener('click', showMessage);
+encrypt.addEventListener('click', showMessageEncrypted);
+decrypt.addEventListener('click', showMessageDecrypted);
 copy.addEventListener('click', copyMessage);
 
