@@ -11,6 +11,16 @@ body{
     background-color: #e9e9ea;
 }
 
+header{
+    align-items: center;
+    display: flex;
+    height: 6rem;
+}
+
+header .logo{
+    margin: 1rem;
+}
+
 .encrypt-input{
     background-color: #e9e9ea;
     border: none;
@@ -20,6 +30,11 @@ body{
     height: 50vh;
     resize: none;
     width: 100%;
+}
+
+.encrypt-input::placeholder{
+    color: #0A3871;
+    font-size: 2rem;
 }
 
 .encrypt-btn{
@@ -90,8 +105,39 @@ body{
     font-weight: 700;
 }
 
+.encrypt-result{ 
+    background-color: #FFF;
+    border-radius: 2rem;
+    box-shadow: 0 1.5rem 2rem -.5rem #00000014;
+    font-weight: 700;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    text-align: center;
+}
+
 .encrypt-result-text{
     word-break: break-word;
+}
+
+.encrypt-result-title{
+    color: #343A40;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.encrypt-result-paragraph{
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 1rem auto;
+    width: 90%;
+}
+
+.encrypt-comments{
+    align-items: center;
+    display: flex;
+    margin: 1rem 0;
 }
 
 .encrypt-comments-icon{
@@ -110,6 +156,10 @@ body{
     color: #495057;
     font-size: 1.5rem;
     margin-left: .5rem;
+}
+
+.encrypt-result-text{
+    font-size: 2rem;
 }
 
 .danger{
@@ -147,27 +197,42 @@ body{
     background-color: #18b713;
 }
 
+footer{
+    color: #6b7682;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    margin: 4rem 1rem 0 0;
+    padding: 1rem 20rem 1rem 3rem;
+    text-align: center;
+    width: 80%;
+}
+
+.fa-linkedin, .fa-github{
+    color: #6b7682;
+    font-size: 2rem;
+    margin: .25rem .5rem;
+    transition: color .5s ease-in-out
+}
+
+.fa-linkedin:hover{
+    color: #0077b5;
+}
+
+.fa-github:hover{
+    color: #000000;
+}
+
 @media screen and (min-width: 1201px) {
 
     main{
         position: relative;
     }
 
-    header{
-        align-items: center;
-        display: flex;
-        height: 6rem;
-    }
-
-    header .logo{
-        margin-left: 1rem;
-    }
-
     .encrypt-form{
         display: inline-block;
-        margin: 2rem 0;
+        margin: 1rem 0;
         height: 45vh;
-        padding: 2rem 5rem;
+        padding: 2rem 3rem;
         width: 70%;
     }
 
@@ -177,25 +242,13 @@ body{
         color: #0A3871;
         display: inline-block;
         font-size: 2rem;
-        height: 40vh;
+        height: 35vh;
         resize: none;
         width: 100%;
     }
 
     .encrypt-input:focus{
         outline: none;
-    }
-
-    .encrypt-input::placeholder{
-        color: #0A3871;
-        font-size: 2rem;
-    }
-
-    .encrypt-comments{
-        align-items: center;
-        display: flex;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
     }
 
     .encrypt-buttons{
@@ -205,14 +258,11 @@ body{
     }
 
     .encrypt-result{
-        border-radius: 2rem;
-        background-color: #FFF;
         display: inline-block;
-        margin: 0 .5rem;
-        min-height: 90vh;
+        min-height: 60vh;
         padding: 2rem;
         position: absolute;
-        top: 3rem;
+        top: 2rem;
         width: 25%;
     }
 
@@ -227,10 +277,9 @@ body{
         width: 100%;
     }
 
-    .encrypt-result-text{
-        font-size: 1.5rem;
+    footer{
+        padding-right: 10rem;
     }
-    
 
 }
 
@@ -240,38 +289,19 @@ body{
         position: relative;
     }
 
-    header{
-        align-items: center;
-        display: flex;
-        height: 6rem;
-        width: 50%;
-    }
-
-    header .logo{
-        margin-left: .5rem;
-    }
-
     .encrypt-form{
         display: inline-block;
-        margin: 2rem 0;
-        height: 50vh;
-        padding: 2rem 5rem;
-        width: 70%;
+        margin: 1rem 0;
+        padding: 2rem 3rem;
+        width: 65%;
+    }
+    
+    .encrypt-input{
+        height: 40vh;
     }
 
     .encrypt-input:focus{
         outline: none;
-    }
-
-    .encrypt-input::placeholder{
-        color: #0A3871;
-        font-size: 2rem;
-    }
-
-    .encrypt-comments{
-        display: flex;
-        font-size: 1rem;
-        margin-bottom: 1rem;
     }
 
     .encrypt-buttons{
@@ -281,15 +311,11 @@ body{
     }
 
     .encrypt-result{
-        border-radius: 2rem;
-        background-color: #FFF;
         display: inline-block;
-        margin: 0 .5rem;
-        min-height: 70vh;
-        padding: 2rem;
+        min-height: 65vh;
         position: absolute;
-        top: 6rem;
-        width: 25%;
+        top: 2rem;
+        width: 30%;
     }
 
     .encrypt-text{
@@ -303,24 +329,17 @@ body{
         width: 100%;
     }
 
-    .encrypt-result-text{
-        font-size: 2rem;
+    footer{
+        font-size: 1rem;
+        margin: 0;
+        padding-right: 5rem;
+        text-align: center;
+        width: 70%
     }
 
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-
-    header{
-        align-items: center;
-        display: flex;
-        height: 6rem;
-        width: 100%;
-    }
-
-    header .logo{
-        margin-left: .5rem;
-    }
 
     .encrypt-form{
         display: inline-block;
@@ -336,56 +355,18 @@ body{
         outline: none;
     }
 
-    .encrypt-input::placeholder{
-        color: #0A3871;
-        font-size: 2rem;
-    }
-
-    .encrypt-comments{
-        display: flex;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-    }
-
     .encrypt-buttons{
         display: flex;
         justify-content: space-between;
         width: 100%;
     }
 
-    .encrypt-result{ 
-        background-color: #FFF;
-        border-radius: 2rem;
-        box-shadow: 0 1.5rem 2rem -.5rem #00000014;
-        display: block;
-        font-weight: 700;
-        margin: 4rem auto;
-        padding: 1.5rem;
-        text-align: center;
+    .encrypt-result{
         width: 95%;
-    }
-
-    .encrypt-result-title{
-        color: #343A40;
-        font-size: 2rem;
-        margin: 0 auto;
-        width: 70%;
-    }
-
-    .encrypt-result-paragraph{
-        color: #495057;
-        font-size: 1.5rem;
-        font-weight: 400;
-        margin: 1rem auto;
-        width: 80%;
     }
 
     .encrypt-result-img{
         display: none;
-    }
-
-    .encrypt-result-text{
-        font-size: 2rem;
     }
 
     .copy-btn{
@@ -395,21 +376,21 @@ body{
         width: 50%;
     }
 
+    footer{
+        margin: 1rem auto;
+        padding-right: 2rem;
+        text-align: center;
+        width: 80%;
+    }
+
 }
 
 @media screen and (max-width: 769px) and (min-width: 480px){
 
-    header{
-        align-items: center;
-        display: flex;
-        height: 3rem;
-        width: 100%;
+    .logo{
+        width: 1.5rem;
     }
 
-    header .logo{
-        height: 2rem;
-        width: 2rem;
-    }
 
     .encrypt-form{
         margin: 0 auto;
@@ -419,7 +400,7 @@ body{
     .encrypt-input{        
         font-size: 1.5rem;
         height: 25vh;
-        margin: 2rem auto 1rem auto;
+        margin: 1rem auto;
     }
 
     .encrypt-input:focus{
@@ -427,7 +408,6 @@ body{
     }
 
     .encrypt-input::placeholder{
-        color: #0A3871;
         font-size: 1.5rem;
     }
 
@@ -437,12 +417,6 @@ body{
 
     .decrypt-btn{
         font-size: 1rem;
-    }
-
-    .encrypt-comments{
-        align-items: center;
-        display: flex;
-        margin-bottom: 1rem;
     }
 
     .encrypt-comments-icon{
@@ -462,20 +436,7 @@ body{
     }
 
     .encrypt-result{
-        background-color: #FFF;
-        border-radius: 2rem;
-        box-shadow: 0 1.5rem 2rem -.5rem #00000014;
-        font-weight: 700;
-        margin: 0 auto 2.5rem auto;
-        padding: 2rem;
-        text-align: center;
         width: 90%;
-    }
-
-    .encrypt-result-title{
-        color: #343A40;
-        font-size: 1.5rem;
-        margin: 0 auto;
     }
 
     .encrypt-result-paragraph{
@@ -500,21 +461,19 @@ body{
         width: 60%;
     }
 
+    footer{
+        margin: 1rem auto;
+        padding-right: 3rem;
+        text-align: center;
+        width: 85%;
+    }
+
 }
 
 @media screen and (max-width: 480px){
-    
-    header{
-        align-items: center;
-        display: flex;
-        height: 3rem;
-        width: 100%;
-    }
 
-    header .logo{
-        margin-left: .5rem;
-        height: 2rem;
-        width: 2rem;
+    .logo{
+        width: 1rem;
     }
 
     .encrypt-form{
@@ -533,15 +492,7 @@ body{
     }
 
     .encrypt-input::placeholder{
-        color: #0A3871;
-        font-size: 2rem;
-        line-height: 3rem;
-    }
-
-    .encrypt-comments{
-        align-items: center;
-        display: flex;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
     }
 
     .encrypt-comments-icon{
@@ -569,13 +520,6 @@ body{
     }
 
     .encrypt-result{
-        background-color: #FFF;
-        border-radius: 2rem;
-        box-shadow: 0 1.5rem 2rem -.5rem #00000014;
-        font-weight: 700;
-        margin: 0 auto 2rem auto;
-        padding: 1rem;
-        text-align: center;
         width: 85%;
     }
 
@@ -606,4 +550,11 @@ body{
         height: 4rem;
     }
     
+    footer{
+        margin: 1rem auto;
+        padding-right: 3rem;
+        text-align: center;
+        width: 75%;
+    }
+
 }
