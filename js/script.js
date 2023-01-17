@@ -131,7 +131,14 @@ let showMessageDecrypted = () => {
 
     let message = getText();
 
-    result.innerHTML = decryptFunction(message);
+    
+    if (message.length === 0) {
+        result.innerHTML = 'Primero debe ingresar un texto valido';
+    } else if (isValid(message)) {
+        result.innerHTML = decryptFunction(message);
+    } else {
+        result.innerHTML = 'El texto ingresado no es valido';
+    }
 
 }
     
